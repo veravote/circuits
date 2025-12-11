@@ -1,0 +1,39 @@
+{
+    "name": "circuit",
+    "version": "1.0.0",
+    "description": "Zero-knowledge circuits with snarkjs",
+    "main": "index.js",
+    "scripts": {
+        "clean": "chmod +x scripts/clean.sh && ./scripts/clean.sh",
+        "format": "npx prettier --write .",
+        "format:check": "npx prettier --check .",
+        "test": "node test/test-circuits.js",
+        "test:merkle": "node test/merkle-proof.test.js",
+        "test:tally": "node test/tally-proof.test.js",
+        "setup:merkle": "chmod +x scripts/setup-merkle-proof.sh && ./scripts/setup-merkle-proof.sh",
+        "setup:tally": "chmod +x scripts/setup-tally-proof.sh && ./scripts/setup-tally-proof.sh",
+        "setup:all": "npm run setup:merkle && npm run setup:tally",
+        "prove:merkle": "node scripts/prove-merkle.js prove example-inputs/merkle-proof-input.json",
+        "prove:tally": "node scripts/prove-tally.js prove example-inputs/tally-proof-input.json",
+        "prove:merkle:example": "node scripts/prove-merkle.js example",
+        "prove:tally:example": "node scripts/prove-tally.js example",
+        "verify:merkle": "node scripts/prove-merkle.js verify",
+        "verify:tally": "node scripts/prove-tally.js verify"
+    },
+    "keywords": [
+        "circom",
+        "snarkjs",
+        "zero-knowledge",
+        "zk-proofs"
+    ],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "circomlib": "^2.0.5",
+        "snarkjs": "^0.7.3"
+    },
+    "devDependencies": {
+        "circom_tester": "^0.0.19"
+    }
+}
