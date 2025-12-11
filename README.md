@@ -111,10 +111,11 @@ Verifies that a leaf is included in a Merkle tree with a given root.
 - `leaf` - The leaf value to prove inclusion for
 - `pathElements[levels]` - Array of sibling hashes along the path
 - `pathIndices` - Binary representation of the path (0=left, 1=right)
+- `root` - The expected Merkle root (public input)
 
-**Output:**
+**Constraint:**
 
-- `root` - The computed Merkle root
+- The circuit verifies that the computed root from the path equals the provided root
 
 **Example Input:**
 
@@ -133,7 +134,8 @@ Verifies that a leaf is included in a Merkle tree with a given root.
         "9999999999999999999",
         "1010101010101010101"
     ],
-    "pathIndices": 341
+    "pathIndices": 341,
+    "root": "21663839004416932945382355908790599225266501822907911457504978515578255421292"
 }
 ```
 

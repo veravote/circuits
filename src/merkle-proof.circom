@@ -28,9 +28,9 @@ template MerkleProof(levels) {
         hasher[i].inputs[0] <== switcher[i].outL;
         hasher[i].inputs[1] <== switcher[i].outR;
     }
-    log(root);
 
+    // Constraint: the computed root must equal the provided root
     root === hasher[levels - 1].out;
 }
 
-component main { public [root] } = MerkleProof(32);
+component main { public [root] } = MerkleProof(10);
